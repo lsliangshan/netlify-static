@@ -42,23 +42,25 @@ import * as getters from './getters'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-  actions: actions.actions,
-  mutations: mutations.mutations,
-  getters: getters.getters,
-  modules: {
-    // moduleNem
-  },
-  state: {
-    theme: 'dark',
-    themeColor: 'rgb(10, 81, 15)',
-    events: {},
-    localStorageKeys: {},
-    assets: {},
-    requestInfo: {},
-    loginInfo: {}
-  }
-})
+const store = () => {
+  return new Vuex.Store({
+    actions: actions.actions,
+    mutations: mutations.mutations,
+    getters: getters.getters,
+    modules: {
+      // moduleNem
+    },
+    state: {
+      theme: 'dark',
+      themeColor: 'rgb(10, 81, 15)',
+      events: {},
+      localStorageKeys: {},
+      assets: {},
+      requestInfo: {},
+      loginInfo: {}
+    }
+  })
+}
 
 export default store
 
